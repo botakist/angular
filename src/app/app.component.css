@@ -1,97 +1,136 @@
-
 :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-size: 14px;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
-html {
-    width: 100%;
-    height: auto;
+
+.spacer {
+	flex: 1;
 }
-  /* start of header */
 
-  .spacer {
-  	flex: 1;
-  }
+.toolbar {
+	height: 60px;
+	display: flex;
+	align-items: center;
+	background-color: #BFBFBF;
+	color: white;
+}
 
-  .toolbar {
-  	height: 60px;
-  	margin: -8px;
-  	display: flex;
-  	align-items: center;
-  	background-color: #BFBFBF;
-  	color: white;
-  	font-weight: 600;
-  }
+.content {
+	display: flex;
+	margin: 32px auto;
+	padding: 0 16px;
+	max-width: 960px;
+	flex-direction: column;
+	align-items: center;
+}
 
-  /* end of header */
+.card {
+	border-radius: 4px;
+	border: 1px solid #aaaaaa;
+	background-color: #aaaaaa;
+	height: 40px;
+	width: 200px;
+	margin: 0 8px 16px;
+	padding: 16px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.2s ease-in-out;
+	line-height: 24px;
+}
 
-  /* start of content */
+.card.card-small {
+	height: 16px;
+	width: 168px;
+}
 
-  .content {
-  	display: flex;
-  	margin: 32px auto;
-  	padding: 0 16px;
-  	max-width: 960px;
-  	flex-direction: column;
-  	align-items: center;
-  }
+.card.highlight-card {
+	background-color: #aaaaaa;
+	color: white;
+	font-weight: 600;
+	border: none;
+	width: auto;
+	min-width: 30%;
+	position: relative;
+}
 
-  .card {
-  	border-radius: 4px;
-  	border: 1px solid #aaaaaa;
-  	background-color: #aaaaaa;
-  	height: 40px;
-  	width: 200px;
-  	margin: 0 8px 16px;
-  	padding: 16px;
-  	display: flex;
-  	flex-direction: row;
-  	justify-content: center;
-  	align-items: center;
-  	transition: all 0.2s ease-in-out;
-  	line-height: 24px;
-  }
+.card.card.highlight-card span {
+	margin-left: 60px;
+}
 
-  .card.card-small {
-  	height: 16px;
-  	width: 168px;
-  }
+svg#rocket {
+	width: 80px;
+	position: absolute;
+	left: -10px;
+}
 
-  .card.highlight-card {
-  	background-color: #aaaaaa;
-  	color: white;
-  	font-weight: 600;
-  	border: none;
-  	width: auto;
-  	min-width: 30%;
-  	position: relative;
-  }
+footer {
+	width: 100%;
+	background-color: #BFBFBF;
+	display: flex;
+	justify-content: center;
+	height: auto;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
 
-  .card.card.highlight-card span {
-  	margin-left: 60px;
-  }
+.footer-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
 
-  svg#rocket {
-  	width: 80px;
-  	position: absolute;
-  	left: -10px;
-  }
-/* end of content */
+.footer-wrapper .footer-message-wrapper {
+	display: flex;
+	align-items: center;
+}
 
-  /* Responsive Styles */
+.footer-wrapper .footer-message-wrapper .github-logo {
+	width: 32px;
+	height: 32px;
+}
 
-  @media screen and (max-width: 767px) {
-  	.card-container>*:not(.circle-link), .terminal {
-  		width: 100%;
-  	}
-  	.card:not(.highlight-card) {
-  		height: 16px;
-  		margin: 8px 0;
-  	}
-  	.card.highlight-card span {
-  		margin-left: 72px;
-  	}
-  }
+.footer-wrapper .footer-message-wrapper .footer-message {
+	margin-left: 1em;
+}
+
+.footer-wrapper .footer-update {
+	text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+	.card-container>*:not(.circle-link) {
+		width: 100%;
+	}
+	.card:not(.highlight-card) {
+		height: 16px;
+		margin: 8px 0;
+	}
+	.card.highlight-card span {
+		margin-left: 72px;
+	}
+	.footer-wrapper .footer-message-wrapper {
+		flex-direction: column;
+	}
+	.footer-wrapper .footer-message-wrapper .footer-message {
+		margin: 0.5em;
+		text-align: center;
+	}
+}
+
+.compatibility-message {
+	display: none;
+	text-align: center;
+	margin: 10px;
+}
+
+@media screen and (max-width:299px) {
+	.compatibility-message {
+		display: block;
+	}
+}
